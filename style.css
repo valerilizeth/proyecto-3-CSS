@@ -1,0 +1,302 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ejercicio de caja */
+.caja {
+    /* propiedades especiales que se heredan */
+    font-size: 20px;
+    color: red;
+
+    outline: 1px solid rgb(25, 216, 4);
+    width: 100px;
+    height: 100px;
+    padding: 50px;
+    border: 5px solid orange;
+    margin: 50px;
+}
+
+/* ejercicio de selectores */
+header > nav > a {
+    font-size: 50px;
+}
+
+aside a {
+    color: green;
+}
+
+/* compartir propiedad css */
+h2, .texto-centrados {
+    text-align: center;
+}
+
+
+h1 {
+    color: red;
+}
+
+.texto-grande {
+    font-size: 60px;
+    color: blue;
+}
+
+#texto-pequeno {
+    font-size: 10px;
+    color: yellow;
+}
+
+/* estilizar textos */
+
+/* text-align */
+.alineacion {
+    /* alineacion a la izquier */
+    /* text-align: left; */
+
+    /* alineacion al centro */
+    /* text-align: center; */
+
+    /* alineacion a la derecha */
+    /* text-align: right; */
+
+    /* justificar texto */
+    text-align: justify;
+}
+
+.tamanos {
+    /* tamano por defecto */
+    /* font-size: 16px; */
+    font-size: 100px;
+}
+
+.decoraciones {
+    /* subrayado */
+    /* text-decoration: underline; */
+
+    text-decoration: line-through;
+}
+
+.quitar-subrayado {
+    text-decoration: unset;
+}
+
+.transformaciones {
+    /* primera letra de cada palabra en mayuscula */
+    /* text-transform: capitalize; */
+
+    /* todo en mayuscula */
+    /* text-transform: uppercase; */
+
+    /* todo minusculas */
+    text-transform: lowercase;
+}
+
+.espaciado-de-textos {
+    /* modifica es espacio entre cada linea de texto */
+    line-height: 25px;
+    /* espaciado entre letras */
+    letter-spacing: 3px;
+    /* espaciado entre palabras */
+    word-spacing: 20px;
+}
+
+.grosor-letra {
+    /* el valor de grosor se puede manejar en un rango de 0 - 900, va de 100 en 100 */
+    font-weight: lighter;
+}
+
+.posicion-caja-1, .posicion-caja-2, .posicion-caja-3, .posicion-caja-4 {
+    height: 100px;
+    width: 100px;
+    border: 3px solid blue;
+    margin: 20px;
+}
+
+.posicion-caja-1 {
+    /* el movimiento va a ser relativo a su posicion original */
+    position: relative;
+    left: 50px;
+    bottom: 50px;
+}
+
+.caja-padre {
+    position: relative;
+    border: 2px red solid;
+}
+.posicion-caja-2 {
+    /* el elemento pierde su posicion */
+    /* y lo podemos mover en relacion al elemento padre que tenga un relative */
+    position: absolute;
+    border-color: blueviolet;
+    bottom: 0;
+    right: 0;
+}
+
+/* .posicion-caja-3 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+} */
+
+/* .posicion-caja-4 {
+    position: sticky;
+    top: 0;
+} */
+
+.perro-imagen {
+    width: 100px;
+}
+
+.cuadricula {
+    outline: 1px solid blue;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+    justify-items: flex-end;
+    align-items: flex-start;
+}
+
+.uno {
+    object-fit: cover;
+    grid-column: 1/3;
+    grid-row: 1/4;
+    justify-self: flex-start;
+    align-self: center;
+}
+
+.caja-distribucion {
+    /* unidad: vh -> view height */
+    /*         vw -> view width */
+    border: 1px solid blue;
+    /* height: 100vh; */
+    display: flex;
+    /* centrar */
+    /* justify-content: center; */
+
+    /* ajusta el mismo espacio entre los elemento */
+    justify-content: space-between;
+
+    /* ajusta el mismo espacio alrededor de cada elemento */
+    /* justify-content: space-around; */
+
+    /* indicar la direccion en el que los elementos se van a distribuir */
+    /* flex-direction: column; */
+}
+
+.caja-distribucion div {
+    height: 20px;
+    width: 50px;
+    border: 1px solid red;
+    /* border-width: 1px;
+    border-style:  solid;
+    border-color: red; */
+    color: aqua;
+    margin: 20px;
+}
+
+.boton-animado {
+    padding: 10px;
+    border: none;
+    /* modifica el fondo del elemento */
+    background-color: rgb(25, 25, 132);
+    color: white;
+    /* redondear esquinas */
+    border-radius: 5px;
+    /* modificar el cursor */
+    cursor: pointer;
+    /* tranciosiones */
+    transition: 
+        padding 2s,
+        background-color 2s,
+        color 2s,
+        font-size 2s;
+}
+
+/* Pseudo-clases */
+.boton-animado:hover {
+    padding: 50px;
+    background-color: rgb(126, 18, 18);
+    color: rgb(203, 203, 16);
+    font-size: 30px;
+}
+
+.caja-animada {
+    position: relative;
+    left: 0px;
+    margin-top: 20px;
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    animation: mover-derecha 4s linear infinite alternate;
+}
+/* keyframes */
+@keyframes mover-derecha {
+    0% {
+        top: 0px;
+        left: 0px;
+        background-color: aqua;
+    }
+    50% {
+        top: 50px;
+    }
+    100% {
+        top: 0;
+        left: 200px;
+        background-color: blueviolet;
+    }
+}
+/* 
+    las etiquetas inline por defecto son:
+    - button
+    - input
+    - img
+    - span
+*/
+.transformacion {
+    display: block;
+    margin: auto;
+    transition: transform 1s;
+}
+
+.transformacion:hover {
+    /* escalar el elemento */
+    transform: scale(1.2);
+
+    /* rotar elementos */
+    /* transform: rotate(-180deg); */
+
+    /* transladar el elemnto en el eje x,y */
+    /* transform: translate(0px, 100%); */
+}
+
+.titulo-animado {
+    text-align: center;
+    animation: aparecer 2s linear forwards;
+}
+
+@keyframes aparecer {
+    from {
+        transform: translate(-1000px, 0px);
+    }
+
+    to {
+        transform: translate(0px, 0px);
+    }
+}
+c
+.responsive {
+    font-size: 150px;
+}
+
+@media screen and (width < 800px) {
+    .responsive {
+        font-size: 120px;
+    }
+}
+
+@media screen and (width < 640px) {
+    .responsive {
+        font-size: 100px;
+    }
+}
